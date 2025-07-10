@@ -6,16 +6,40 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Replace with actual backend authentication logic
-    if (email === "test@example.com" && password === "password123") {
-      alert("Login successful!");
-      navigate("/"); // Go to homepage
+  const handleLogin = async (e) => {
+  e.preventDefault();
+
+  const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  if (!gmailRegex.test(email)) {
+    alert("Please enter a valid Gmail address.");
+    return;
+  }
+
+  if (password.trim() === "") {
+    alert("Password cannot be empty.");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      alert(data.message);
+      localStorage.setItem("auth", "true");
+      navigate("/");
     } else {
-      alert("Invalid credentials. Please try again.");
+      alert(data.message);
     }
-  };
+  } catch (err) {
+    alert("Server error");
+  }
+};
+
 
   return (
     <div style={styles.container}>

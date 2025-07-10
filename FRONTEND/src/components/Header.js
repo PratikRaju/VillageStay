@@ -10,6 +10,7 @@ const Header = () => {
         <Link to="/about" style={styles.link}>About</Link>  {/* Added About link here */}
         <Link to="/contact" style={styles.link}>Contact</Link>
         <Link to="/login" style={styles.link}>Login</Link>
+        <Link to="/Booking" style={styles.link}>Booking</Link>
       </nav>
     </header>
   );

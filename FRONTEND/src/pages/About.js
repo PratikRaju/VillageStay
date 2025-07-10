@@ -12,7 +12,7 @@ const About = () => {
   <div style={styles.aboutContainer}>
     {/* Left: Image */}
     <img
-      src="https://images.unsplash.com/photo-1589738431674-9ca7a19b8c67?auto=format&fit=crop&w=800&q=80"
+      src="https://images.unsplash.com/photo-1564426699369-f14249ac2c32?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmlsbGFnZSUyMG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
       alt="Village scene"
       style={styles.aboutImage}
     />

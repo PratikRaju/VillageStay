@@ -32,14 +32,27 @@ const Home = () => {
 
   return (
     <div style={styles.container}>
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <section style={styles.hero}>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          style={styles.video}
+          poster="https://thumbs.dreamstime.com/b/romanian-hillside-village-summer-time-mountain-landscape-transylvania-romania-romanian-hillside-village-summer-120917479.jpg"
+        >
+          <source src="https://www.shutterstock.com/shutterstock/videos/3508683445/preview/stock-footage-aerial-view-of-village-encircled-by-mountains-and-river.webm" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        <div style={styles.heroOverlay}></div>
+        
         <div style={styles.heroText}>
           <h1 style={styles.title}>Welcome to VillageStay</h1>
           <p style={styles.subtitle}>
             Discover rural India. Book peaceful stays in authentic villages.
           </p>
-          {/* Search Bar */}
           <div style={styles.searchBar}>
             <input
               type="text"
@@ -66,93 +79,119 @@ const Home = () => {
           )}
         </div>
       </section>
+
       {/* Why VillageStay Section */}
-<section style={styles.whySection}>
-  <h2 style={styles.sectionTitle}>Why Choose VillageStay?</h2>
-  <p style={styles.sectionDesc}>Explore the authentic life of Indian villages with these unique experiences.</p>
+      <section style={styles.whySection}>
+        <h2 style={styles.sectionTitle}>Why Choose VillageStay?</h2>
+        <p style={styles.sectionDesc}>Explore the authentic life of Indian villages with these unique experiences.</p>
 
-  <div style={styles.whyGrid}>
-    <div style={styles.whyCard}>
-      <img src="https://cdn-icons-png.flaticon.com/512/2590/2590277.png" alt="Homestay" style={styles.icon} />
-      <h3>Authentic Homestays</h3>
-      <p>Stay with real village families and experience rural hospitality firsthand.</p>
-    </div>
+        <div style={styles.whyGrid}>
+          <div style={styles.whyCard}>
+            <img src="https://cdn-icons-png.flaticon.com/512/2590/2590277.png" alt="Homestay" style={styles.icon} />
+            <h3>Authentic Homestays</h3>
+            <p>Stay with real village families and experience rural hospitality firsthand.</p>
+          </div>
 
-    <div style={styles.whyCard}>
-      <img src="https://cdn-icons-png.flaticon.com/512/2698/2698194.png" alt="Culture" style={styles.icon} />
-      <h3>Cultural Exchange</h3>
-      <p>Participate in traditional music, dance, and craft-making with locals.</p>
-    </div>
+          <div style={styles.whyCard}>
+            <img src="https://cdn-icons-png.flaticon.com/512/2698/2698194.png" alt="Culture" style={styles.icon} />
+            <h3>Cultural Exchange</h3>
+            <p>Participate in traditional music, dance, and craft-making with locals.</p>
+          </div>
 
-    <div style={styles.whyCard}>
-      <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Farm" style={styles.icon} />
-      <h3>Farm Tours</h3>
-      <p>Walk through farms, help in planting, and learn about organic practices.</p>
-    </div>
+          <div style={styles.whyCard}>
+            <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Farm" style={styles.icon} />
+            <h3>Farm Tours</h3>
+            <p>Walk through farms, help in planting, and learn about organic practices.</p>
+          </div>
 
-    <div style={styles.whyCard}>
-      <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Festival" style={styles.icon} />
-      <h3>Village Festivals</h3>
-      <p>Enjoy local fairs, seasonal festivals, and vibrant village celebrations.</p>
-    </div>
+          <div style={styles.whyCard}>
+            <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Festival" style={styles.icon} />
+            <h3>Village Festivals</h3>
+            <p>Enjoy local fairs, seasonal festivals, and vibrant village celebrations.</p>
+          </div>
 
-    <div style={styles.whyCard}>
-      <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Nature" style={styles.icon} />
-      <h3>Nature Walks</h3>
-      <p>Go for morning walks through forests, hills, and riverside trails.</p>
-    </div>
+          <div style={styles.whyCard}>
+            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Nature" style={styles.icon} />
+            <h3>Nature Walks</h3>
+            <p>Go for morning walks through forests, hills, and riverside trails.</p>
+          </div>
 
-    <div style={styles.whyCard}>
-      <img src="https://cdn-icons-png.flaticon.com/512/3143/3143510.png" alt="Sustainable" style={styles.icon} />
-      <h3>Sustainable Tourism</h3>
-      <p>Support eco-friendly rural development while enjoying your stay.</p>
-    </div>
-  </div>
-</section>
+          <div style={styles.whyCard}>
+            <img src="https://cdn-icons-png.flaticon.com/512/3143/3143510.png" alt="Sustainable" style={styles.icon} />
+            <h3>Sustainable Tourism</h3>
+            <p>Support eco-friendly rural development while enjoying your stay.</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
 const styles = {
   container: {
-    padding: "20px",
     fontFamily: "Arial, sans-serif",
   },
   hero: {
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "30px",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('https://thumbs.dreamstime.com/b/romanian-hillside-village-summer-time-mountain-landscape-transylvania-romania-romanian-hillside-village-summer-120917479.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  padding: "80px 40px",
-  borderRadius: "12px",
-},
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "80px 40px",
+    overflow: "hidden",
+    minHeight: "400px",
+  },
+  video: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    zIndex: -2,
+  },
+  heroOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0,0,0,0.4)",
+    zIndex: -1,
+  },
   heroText: {
     maxWidth: "500px",
     textAlign: "left",
+    zIndex: 1,
   },
   title: {
-    fontSize: "40px",
+    fontSize: "50px",
     color: "#FFFFFF",
+    position:"absolute",
+    top:"25%",
+    left:"50%",
+    transform: "translate(-50%, -50%)",
   },
   subtitle: {
     fontSize: "18px",
     marginTop: "10px",
     marginBottom: "20px",
     color: "#FFFFFF",
-  },
-  heroImage: {
-    width: "400px",
-    borderRadius: "10px",
+    position:"absolute",
+    top:"39%",
+    left:"50%",
+    transform: "translate(-50%, -50%)",
   },
   searchBar: {
     display: "flex",
     gap: "10px",
     marginTop: "20px",
+    position:"absolute",
+    top:"45%",
+    left:"50%",
+    transform: "translate(-50%, -50%)",
+    width: "100%",
+    maxWidth: "450px",
   },
   input: {
     flex: "1",
@@ -186,34 +225,35 @@ const styles = {
     gap: "20px",
   },
   whySection: {
-  marginTop: "60px",
-  padding: "30px 20px",
-  backgroundColor: "#f0fdf4",
-  borderRadius: "12px",
-},
-sectionDesc: {
-  fontSize: "16px",
-  color: "#444",
-  marginBottom: "30px",
-},
-whyGrid: {
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "center",
-  gap: "25px",
-},
-whyCard: {
-  width: "240px",
-  padding: "20px",
-  backgroundColor: "#ffffff",
-  borderRadius: "10px",
-  textAlign: "center",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-},
-icon: {
-  width: "60px",
-  height: "60px",
-  marginBottom: "15px",
-}
+    marginTop: "60px",
+    padding: "30px 20px",
+    backgroundColor: "#f0fdf4",
+    borderRadius: "12px",
+  },
+  sectionDesc: {
+    fontSize: "16px",
+    color: "#444",
+    marginBottom: "30px",
+  },
+  whyGrid: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "25px",
+  },
+  whyCard: {
+    width: "240px",
+    padding: "20px",
+    backgroundColor: "#ffffff",
+    borderRadius: "10px",
+    textAlign: "center",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+  },
+  icon: {
+    width: "60px",
+    height: "60px",
+    marginBottom: "15px",
+  }
 };
+
 export default Home;
